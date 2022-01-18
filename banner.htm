@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            * { box-sizing: border-box;}
+            body { margin: 0;}
+            #banner {
+                position: relative;
+                width: 300px;
+                height: 600px;
+                border: 1px solid #666;
+                overflow: hidden;
+            }
+            #banner>div { position: absolute }
+            #sema {
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(#e1dfff, #fff);
+                animation-name: sema;
+                animation-duration: 1s;
+                animation-fill-mode: forwards;
+            }
+            @keyframes sema {
+                from {height: 100%; opacity: 0 }
+                to {height: 50%; opacity: 1 }
+            }
+            #deniz {
+                width: 100%;
+                height: 0;
+                background: linear-gradient(#00a2ff, #035d91);
+                bottom: 0;
+                animation-name: deniz;
+                animation-delay: 1s;
+                animation-duration: 1s;
+                animation-timing-function: ease-out;
+                animation-fill-mode: forwards;
+            }
+            @keyframes deniz {
+                from {height: 0 }
+                to {height: 50% }
+            }
+            [id*="bulud"] {
+                right: -100px;
+                width: 100px;
+                height: 70px;
+                background-image: url('clouds.png');
+                z-index: 10;
+                animation-name: bulud;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+            }
+            #bulud1 {
+                top: 0;
+                opacity: .8;
+                animation-delay: 5s;
+                animation-duration: 14s;
+            }
+            #bulud2 {
+                background-position: -100px 0;
+                top: 75px;
+                opacity: .6;
+                animation-delay: 3s;
+                animation-duration: 16s;
+            }
+            #bulud3 {
+                background-position: -200px 0;
+                top: 150px;
+                opacity: .5;
+                animation-delay: 5s;
+                animation-duration: 18s;
+            }
+            #bulud4 {
+                background-position: 0 -70px;
+                top: 225px;
+                opacity: .4;
+                animation-delay: 1s;
+                animation-duration: 20s;
+            }
+            @keyframes bulud {
+                from {right: -100px }
+                to {right: 300px }
+            }
+            #qayiq {
+                z-index: 15;
+                top: 250px;
+                left: -100px;
+                animation: qayiq 25s linear 2s infinite;
+            }
+            #qayiq>img {
+                width: 100px;
+                height: 100px;
+                animation: gemi 3s linear infinite alternate;
+            }
+            @keyframes qayiq {
+                from {left: -100px }
+                to {left: 300px }
+            }
+            @keyframes gemi {
+                from {transform: rotate(1deg) }
+                to {transform: rotate(-5deg) }
+            }
+            #yazi {
+                opacity: 0;
+                font: bold 3em Arial;
+                color: #fff;
+                text-shadow: 0 0 2px #035d91;
+                text-align: center;
+                text-transform: uppercase;
+                animation: yazi 1s ease 15s forwards;
+            }
+            @keyframes yazi {
+                from {transform: scale(0, 0) rotate(-720deg); opacity: 0; top: 300px; }
+                to {transform: scale(1, 1) rotate(360deg); opacity: 1; top: 400px }
+            }
+            #duyme {
+                width: 100%;
+                bottom: -80px;
+                text-align: center;
+                animation: duyme 1s ease 16s forwards;
+				
+            }
+            #duyme>a {
+                display: inline-block;
+                font: .8em Tahoma;
+                text-decoration: none;
+                color: #fff;
+                padding: 8px 30px;
+                border-radius: 5px;
+                border: 1px solid #035d91;
+                background: linear-gradient(#00a2ff, #f6699, #00a2ff);
+            }
+            @keyframes duyme {
+                0% {bottom: -80px }
+                95% {bottom: 35px }
+                100% {bottom: 30px }
+            }
+        </style>
+
+    </head>
+    <body>
+        <div id="banner">
+            <div id="sema"></div>
+            <div id="deniz"></div>
+            <div id="bulud1"></div>
+            <div id="bulud2"></div>
+            <div id="bulud3"></div>
+            <div id="bulud4"></div>
+            <div id="qayiq"><img src="boat.png" /></div>
+            <div id="yazi">Dəniz keyfi</div>
+            <div id="duyme"><a href="">Ətraflı</a></div>
+        </div>
+    </body>
+</html>
